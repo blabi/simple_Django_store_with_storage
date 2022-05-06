@@ -1,0 +1,10 @@
+{%  extends "home.html" %}
+
+{% block content %}
+                <h2>Produkt: {{ product.name }}</h2>
+    <h3> Opis: {{ product.description }}</h3>
+    <h3> Cena netto: {{ product.price }}</h3>
+    <h3> VAT: {{ product.get_vat_display }}</h3>
+    <h3> Ilość na magazynie: {{ product.stock }}</h3>
+
+{% endblock %}

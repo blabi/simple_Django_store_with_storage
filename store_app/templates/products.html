@@ -1,0 +1,14 @@
+{%  extends "home.html" %}
+
+{% block content %}
+                <h2>Produkty:</h2>
+                <ul>
+                    {% for product in products %}
+                        <li><a href='/product/{{ product.id }}'>{{ product.name }}</a>
+                        <a href="{% url 'edit-product' pk=product.id %} ">Modyfikuj produkt</a></li>
+                    {% endfor %}
+
+                </ul>
+    <h3><a href="{% url 'add-product' %}">Dodaj produkt</a> </h3>
+
+{% endblock %}

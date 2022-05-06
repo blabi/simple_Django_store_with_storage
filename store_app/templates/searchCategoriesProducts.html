@@ -1,0 +1,21 @@
+{%  extends "home.html" %}
+
+{% block content %}
+    <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit">
+    </form>
+    <ul>
+    <h1>Znaleziono w produktach:</h1>
+        {% for product in products %}
+        <li>  {{  product.name }} </li>
+        {% endfor %}
+    <h1>Znalezionow w kategoriach </h1>
+        {% for category in categories %}
+        <li> {{ category.category_name }}</li>
+        {% endfor %}
+
+
+    </ul>
+{% endblock %}

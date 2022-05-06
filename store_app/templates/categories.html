@@ -1,0 +1,14 @@
+{%  extends "home.html" %}
+
+{% block content %}
+                <h2>Kategorie:</h2>
+                <ul>
+                    {% for category in categories %}
+                    <li><a href='/category/{{ category.slug }}'>{{ category.category_name }}</a>
+                        <a href="{% url 'edit-category' slug=category.slug %} ">Modyfikuj kategorię</a></li>
+                    {% endfor %}
+
+                </ul>
+    <h3><a href="{% url 'add-category' %}">Dodaj kategorię</a> </h3>
+
+{% endblock %}
