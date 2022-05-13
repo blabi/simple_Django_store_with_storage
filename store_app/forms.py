@@ -8,6 +8,10 @@ class AddCategoryModelForm(forms.ModelForm):
     class Meta:
         model = Category
         fields = ['category_name', 'slug']
+        
+        labels = {
+            'category_name': 'Nazwa kategorii'
+        }
 
 
 class AddProductModelForm(forms.ModelForm):
@@ -15,6 +19,13 @@ class AddProductModelForm(forms.ModelForm):
         model = Product
         fields = '__all__'
         # exclude = ['categories']
+        
+        labels = {'name': 'Nazwa produktu',
+            'description': 'Opis',
+            'price': 'Cena',
+            'stock': 'Stan',
+            'categories': 'Kategorie',
+            }
 
 
 class SearchCategoryProductForm(forms.Form):
