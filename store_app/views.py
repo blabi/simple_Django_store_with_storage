@@ -28,10 +28,12 @@ class CategoryView(View):
 class ProductView(View):
     def get(self, request, product_id: int):
         product = Product.objects.get(pk=product_id)
+        gross = (product.price * product.get_vat_display()) + product.price
         return render(request, template_name="product.html", context={
             "product": product,
+            'gross': gross,
         })
-
+        
 
 class AddCategoryModelFormView(View):
 
