@@ -29,9 +29,11 @@ class ProductView(View):
     def get(self, request, product_id: int):
         product = Product.objects.get(pk=product_id)
         gross = (product.price * product.get_vat_display()) + product.price
+        vat_disp = product.get_vat_display()*100
         return render(request, template_name="product.html", context={
             "product": product,
             'gross': gross,
+            'vat_disp': vat_disp,
         })
         
 
@@ -103,3 +105,9 @@ class SearchCategoryProductView(View):
             return render(request, 'searchCategoriesProducts.html', {"categories": categories, "products": products, 'form':form})
         return render(request, 'searchCategoriesProducts.html', {'form': form})
 
+
+class HomeView(View):
+    
+    def get(self, request):
+        return render(request=request, template_name='home.html')
+        

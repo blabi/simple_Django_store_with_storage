@@ -1,11 +1,12 @@
 {%  extends "home.html" %}
 
 {% block content %}
-                <h2>Produkt: {{ product.name }}</h2>
-    <h3> Opis: {{ product.description }}</h3>
-    <h3> Cena netto: {{ product.price }}</h3>
-    <h3> VAT: {{ product.get_vat_display }}</h3>
-    <h3>Cena brutto: {{ gross }}</h3>
-    <h3> Ilość na magazynie: {{ product.stock }}</h3>
+            <h2>Produkt: {{ product.name }}</h2>
+            <h3> Opis: {{ product.description }}</h3>
+            <h3> Cena netto: {{ product.price }}</h3>
+            {% comment %} <h3> VAT: {{ product.get_vat_display }}</h3> {% endcomment %}
+            <h3> VAT: {{vat_disp | floatformat:0}}% </h3>
+            <h3>Cena brutto: {{ gross }}</h3>
+            <h3> Ilość na magazynie: {{ product.stock }}</h3>
 
 {% endblock %}
