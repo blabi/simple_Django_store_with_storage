@@ -3,8 +3,8 @@ from datetime import datetime
 
 def footer_contex(request):
     ctx = {
-        'now': datetime.now(),
+        'now': datetime.timezon().now(),
         'version': 'version 0.5'
         
     }
-    return request, ctx
+    return ctx

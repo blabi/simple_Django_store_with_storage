@@ -4,7 +4,7 @@
                 <h2>Produkty w kategorii - {{ category.category_name }}:</h2>
                 <ul>
                     {% for product in products %}
-                    <li><a href='/product/{{ product.pk }}'>{{ product.name }} {{ product.get_vat_display }}</a> cena netto {{ product.price }} </li>
+                    <li><a href='/product/{{ product.pk }}'>{{ product.name }} </a> </li>
                     {% endfor %}
 
                 </ul>
