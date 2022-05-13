@@ -109,5 +109,5 @@ class SearchCategoryProductView(View):
 class HomeView(View):
     
     def get(self, request):
-        return render(request=request, template_name='home.html')
+        return render(request, template_name='home.html')
         

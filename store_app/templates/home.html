@@ -10,14 +10,19 @@
             <body>
             {%  block body %}
                 <h1>Sklep z zabawkami</h1>
-                <table>
-                <tr>
-                <th scope="col"><a href="{% url 'categories' %}">Kategorie</a></th>
-                <th scope="col"><a href="{% url 'products' %}">Produkty</a></th>
-                <th scope="col"><a href="{% url 'search' %}">Szukaj</a></th>
-                </tr>
-                </table>
+                    <table>
+                        <tr>
+                            <th scope="col"><a href="{% url 'categories' %}">Kategorie</a></th>
+                            <th scope="col"><a href="{% url 'products' %}">Produkty</a></th>
+                            <th scope="col"><a href="{% url 'search' %}">Szukaj</a></th>
+                        </tr>
+                    </table>
                 {% block content %}{% endblock %}
             {% endblock %}
+            <footer>
+                <strong>
+                  Dzisiaj jest {{ now }} | Wersja {{ version }}
+                </strong>
+              </footer>
             </body>
         </html>
