@@ -4,7 +4,7 @@ from django.views import View
 from django.views.generic import UpdateView
 
 from store_app.forms import AddCategoryModelForm, AddProductModelForm, SearchCategoryProductForm
-from store_app.models import Category, Product, VAT
+from store_app.models import Category, Product
 
 
 class CategoriesView(View):
